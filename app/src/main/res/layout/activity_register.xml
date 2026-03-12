@@ -40,15 +40,27 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/inicia_sesi_n"
+                android:text="@string/crear_cuenta"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="#333333"
+                android:textColor="#000000"
                 android:layout_gravity="center"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="20dp"/>
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/etRegName"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:hint="@string/nombre_completo"
+                android:textColor="#000000"
+                android:textColorHint="#757575"
+                android:background="@drawable/bg_input_field"
+                android:layout_marginBottom="12dp"
+                android:paddingStart="15dp"
+                tools:ignore="Autofill,RtlSymmetry,TextFields" />
+
+            <EditText
+                android:id="@+id/etRegEmail"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:hint="@string/correo_electr_nico"
@@ -56,11 +68,12 @@
                 android:textColorHint="#757575"
                 android:background="@drawable/bg_input_field"
                 android:inputType="textEmailAddress"
-                android:layout_marginBottom="16dp"
-                tools:ignore="Autofill" />
+                android:layout_marginBottom="12dp"
+                android:paddingStart="15dp"
+                tools:ignore="Autofill,RtlSymmetry" />
 
             <EditText
-                android:id="@+id/etPassword"
+                android:id="@+id/etRegPassword"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:hint="@string/contraseña"
@@ -68,88 +81,45 @@
                 android:textColorHint="#757575"
                 android:background="@drawable/bg_input_field"
                 android:inputType="textPassword"
-                android:layout_marginBottom="24dp"
-                tools:ignore="Autofill" />
+                android:layout_marginBottom="12dp"
+                android:paddingStart="15dp"
+                tools:ignore="Autofill,RtlSymmetry" />
 
-            <Button
-                android:id="@+id/btnLogin"
+            <EditText
+                android:id="@+id/etRegConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
-                android:text="@string/ingresar"
+                android:hint="@string/confirmar_contrase_a"
+                android:textColor="#000000"
+                android:textColorHint="#757575"
+                android:background="@drawable/bg_input_field"
+                android:inputType="textPassword"
+                android:layout_marginBottom="20dp"
+                android:paddingStart="15dp"
+                tools:ignore="Autofill,RtlSymmetry" />
+
+            <Button
+                android:id="@+id/btnRegisterAccount"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="@string/registrarme"
                 android:backgroundTint="#2E5BFF"
                 android:textColor="#FFFFFF"
                 app:cornerRadius="16dp" />
 
             <TextView
-                android:id="@+id/tvGoToRegister"
+                android:id="@+id/tvGoToLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/no_tienes_cuenta_reg_strate"
+                android:text="@string/tienes_cuenta_inicia_sesi_n"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
                 android:textColor="#2E5BFF"
                 android:textStyle="bold"
                 android:textSize="14sp"
                 android:padding="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/olvidaste_tu_contrase_a"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:textColor="#757575"
-                android:textSize="12sp"/>
-
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="32dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/o_inicia_sesi_n_conn"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="16dp"
-            android:textSize="14sp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/btnGoogle"
-                android:layout_width="100dp"
-                android:layout_height="35dp"
-                android:layout_marginEnd="25dp"
-                android:background="@drawable/bg_social_button"
-                android:contentDescription="@string/google"
-                android:src="@drawable/ic_google_logo"
-                android:scaleType="centerInside"
-                android:padding="5dp"
-                android:elevation="4dp" />
-
-            <ImageButton
-                android:id="@+id/btnApple"
-                android:layout_width="100dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="25dp"
-                android:background="@drawable/bg_social_button"
-                android:contentDescription="@string/apple"
-                android:src="@drawable/ic_apple_logo"
-                android:scaleType="centerInside"
-                android:padding="5dp"
-                android:elevation="4dp" />
-
-        </LinearLayout>
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

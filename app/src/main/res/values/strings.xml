@@ -12,4 +12,10 @@
     <string name="inicia_sesi_n">Inicia Sesión</string>
     <string name="o_inicia_sesion_con">o inicia sesion con</string>
     <string name="o_inicia_sesi_n_conn">O Inicia Sesión Con</string>
+    <string name="no_tienes_cuenta_reg_strate">¿No tienes cuenta? Regístrate</string>
+    <string name="tienes_cuenta_inicia_sesi_n">Tienes cuenta? Inicia Sesión</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="nombre_completo">Nombre completo</string>
+    <string name="confirmar_contrase_a">Confirmar contraseña</string>
+    <string name="registrarme">REGISTRARME</string>
 </resources>
