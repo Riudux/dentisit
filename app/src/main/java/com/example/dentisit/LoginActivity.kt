@@ -32,18 +32,31 @@ class LoginActivity : AppCompatActivity() {
         val etPassword = findViewById<EditText>(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
 
-        // 4. Lógica de Login
+        // 4. Lógica de Login (Simulado para pruebas)
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
             val pass = etPassword.text.toString().trim()
 
-            if (email.isEmpty() || pass.isEmpty()) {
-                Toast.makeText(this, "Por favor completa los campos", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "¡Bienvenido!", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
-                finish()
+            // Definimos nuestras credenciales de prueba
+            val adminEmail = "admin@admin.admin"
+            val adminPass = "admin1234"
+
+            when {
+                email.isEmpty() || pass.isEmpty() -> {
+                    Toast.makeText(this, "Por favor completa los campos", Toast.LENGTH_SHORT).show()
+                }
+                email == adminEmail && pass == adminPass -> {
+                    // ¡ÉXITO! Las credenciales coinciden
+                    Toast.makeText(this, "¡Acceso concedido!", Toast.LENGTH_SHORT).show()
+
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                else -> {
+                    // Error si los datos son incorrectos
+                    Toast.makeText(this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
