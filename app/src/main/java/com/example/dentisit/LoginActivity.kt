@@ -39,24 +39,18 @@ class LoginActivity : AppCompatActivity() {
             val email = etEmail.text.toString().trim()
             val pass = etPassword.text.toString().trim()
 
-            // Definimos nuestras credenciales de prueba
-            val adminEmail = "admin@admin.admin"
-            val adminPass = "admin1234"
-
-            when {
-                email.isEmpty() || pass.isEmpty() -> {
-                    Toast.makeText(this, "Por favor completa los campos", Toast.LENGTH_SHORT).show()
-                }
-                email == adminEmail && pass == adminPass -> {
-                    // ¡ÉXITO! Las credenciales coinciden
-                    Toast.makeText(this, "¡Acceso concedido!", Toast.LENGTH_SHORT).show()
-
+            // REVISAR SI ESTÁN VACÍOS
+            if (email.isEmpty() || pass.isEmpty()) {
+                // Si falta algo, mostramos un mensaje y no hacemos nada más
+                Toast.makeText(this, "Por favor, llena todos los campos", Toast.LENGTH_SHORT).show()
+            } else {
+                // SI NO ESTÁN VACÍOS, REVISAMOS LAS CREDENCIALES
+                if (email == "admin@admin.com" && pass == "admin1234") {
                     val intent = Intent(this, HomeActivity::class.java)
+                    intent.putExtra("USER_NAME", email.substringBefore("@"))
                     startActivity(intent)
                     finish()
-                }
-                else -> {
-                    // Error si los datos son incorrectos
+                } else {
                     Toast.makeText(this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -67,6 +61,8 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+
+
 
     }
 }

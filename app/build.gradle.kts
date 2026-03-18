@@ -42,4 +42,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    //noinspection UseTomlInstead
+    implementation("com.google.android.gms:play-services-maps:20.0.0")
+    //noinspection UseTomlInstead
+    implementation("com.google.android.gms:play-services-location:21.3.0")
 }

@@ -18,4 +18,12 @@
     <string name="nombre_completo">Nombre completo</string>
     <string name="confirmar_contrase_a">Confirmar contraseña</string>
     <string name="registrarme">REGISTRARME</string>
+    <string name="hola">Hola Richi!</string>
+    <string name="buscar">Buscar</string>
+    <string name="categorias">Categorias:</string>
+    <string name="recomendado">Recomendado;</string>
+    <string name="mi_ubicacion">Mi ubicacion</string>
+    <string name="centro">Centro</string>
+    <string name="mapa">mapa</string>
+    <string name="mapa_cercano">Mapa cercano</string>
 </resources>
