@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.FirebaseAuth
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -28,16 +29,22 @@ class RegisterActivity : AppCompatActivity() {
         val btnRegister = findViewById<Button>(R.id.btnRegisterAccount)
         val etPass = findViewById<EditText>(R.id.etRegPassword)
         val etConfirm = findViewById<EditText>(R.id.etRegConfirmPassword)
+        val auth = FirebaseAuth.getInstance()
 
         btnRegister.setOnClickListener {
-            val pass = etPass.text.toString()
-            val confirm = etConfirm.text.toString()
+            val email = etConfirm.text.toString()
+            val password = etPass.text.toString()
 
-            if (pass == confirm && pass.isNotEmpty()) {
-                Toast.makeText(this, "Cuenta creada con éxito", Toast.LENGTH_SHORT).show()
-                finish() // Regresa al Login
-            } else {
-                Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "¡Registro exitoso!", Toast.LENGTH_SHORT).show()
+                            finish() // Regresa al Login
+                        } else {
+                            Toast.makeText(this, "Error: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                        }
+                    }
             }
         }
 
